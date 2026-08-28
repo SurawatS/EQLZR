@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>EQLZR • Gaming Setup</title>
+
+
+<style>
+
+/* =====================================================
+   FONT
+===================================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap'
+);
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+    --red:#ff174f;
+    --blue:#35aaff;
+    --purple:#8b5cf6;
+    --gold:#ffb000;
+
+    --white:#ffffff;
+
+    --text:#ffffff;
+    --text-light:#d8d8d8;
+    --text-muted:#a8a8a8;
+
+    --bg:#050509;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    padding:50px 20px;
+
+    color:var(--text);
+
+    font-family:'Orbitron',sans-serif;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,0,0,.48),
+            rgba(5,0,12,.54),
+            rgba(0,0,0,.68)
+        ),
+
+        url("./img/Wallpaper.gif")
+
+        center center /
+        cover
+        fixed
+        no-repeat;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:50px 50px;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   RED LIGHT
+===================================================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    left:-180px;
+    top:20%;
+
+    border-radius:50%;
+
+    background:#ff174f18;
+
+    filter:blur(100px);
+
+    z-index:0;
+
+    pointer-events:none;
+
+    animation:
+        lightMove 8s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes lightMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(260px,100px);
+    }
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    animation:
+        pageIn .8s ease both;
+
+}
+
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:48px;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    position:relative;
+
+    width:95px;
+    height:95px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    border-radius:27px;
+
+    box-shadow:
+
+        0 0 25px #ff174f66,
+
+        0 0 70px #7c3aed55;
+
+    overflow:hidden;
+
+    animation:
+        logoGlow 3s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes logoGlow{
+
+    from{
+
+        box-shadow:
+
+            0 0 20px #ff174f55,
+
+            0 0 50px #7c3aed33;
+
+    }
+
+    to{
+
+        box-shadow:
+
+            0 0 40px #ff174f99,
+
+            0 0 90px #7c3aed66;
+
+    }
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.header h1{
+
+    margin-top:22px;
+
+    font-size:40px;
+
+    font-weight:900;
+
+    letter-spacing:9px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ff315e,
+            #ffffff,
+            #a78bfa
+        );
+
+    background-size:250% auto;
+
+    color:transparent;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    filter:
+        drop-shadow(
+            0 3px 12px
+            rgba(0,0,0,.8)
+        );
+
+    animation:
+        textShine 5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes textShine{
+
+    to{
+        background-position:250% center;
+    }
+
+}
+
+
+/* =====================================================
+   HEADER SUBTITLE
+===================================================== */
+
+.header p{
+
+    margin-top:11px;
+
+    color:#e0e0e0;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+        0 1px 3px #000,
+
+        0 2px 10px #000,
+
+        0 0 15px rgba(0,0,0,.8);
+
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+    color:#dedede;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-shadow:
+
+        0 1px 4px #000,
+
+        0 2px 10px #000;
+
+}
+
+
+.section-title::before{
+
+    content:"";
+
+    width:38px;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--red)
+        );
+
+    box-shadow:
+        0 0 10px var(--red);
+
+}
+
+
+/* =====================================================
+   GAME GRID
+===================================================== */
+
+.games{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   GAME CARD
+===================================================== */
+
+.game-card{
+
+    --color:#fff;
+
+    position:relative;
+
+    min-height:350px;
+
+    padding:25px;
+
+    border-radius:23px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(25,25,32,.82),
+            rgba(5,5,9,.91)
+        );
+
+    border:1px solid rgba(255,255,255,.16);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+/* =====================================================
+   CARD TOP LINE
+===================================================== */
+
+.game-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color),
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px var(--color);
+
+}
+
+
+/* =====================================================
+   CARD GLOW
+===================================================== */
+
+.game-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-130px;
+    bottom:-130px;
+
+    border-radius:50%;
+
+    background:var(--color);
+
+    opacity:.05;
+
+    filter:blur(30px);
+
+    transition:.5s;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.game-card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.01);
+
+    border-color:#ffffff40;
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.95),
+
+        0 0 40px var(--color);
+
+}
+
+
+.game-card:hover::after{
+
+    transform:scale(1.8);
+
+    opacity:.1;
+
+}
+
+
+/* =====================================================
+   GAME ICON
+===================================================== */
+
+.game-icon{
+
+    position:relative;
+
+    width:82px;
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:21px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.20);
+
+    box-shadow:
+
+        inset 0 0 20px #ffffff08,
+
+        0 0 30px var(--color);
+
+    overflow:hidden;
+
+}
+
+
+.game-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff70,
+            transparent
+        );
+
+    transform:rotate(-45deg);
+
+    animation:
+        scan 3s
+        linear
+        infinite;
+
+}
+
+
+@keyframes scan{
+
+    from{
+        left:-120px;
+    }
+
+    to{
+        left:140px;
+    }
+
+}
+
+
+.game-icon img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:78%;
+    height:78%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 10px var(--color)
+        );
+
+    transition:.4s;
+
+}
+
+
+.game-card:hover
+.game-icon img{
+
+    transform:
+        scale(1.12)
+        rotate(2deg);
+
+}
+
+
+/* =====================================================
+   GAME TITLE
+===================================================== */
+
+.game-card h2{
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+        0 2px 5px #000,
+
+        0 0 12px rgba(255,255,255,.12);
+
+}
+
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+.setting{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:11px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.10);
+
+    font-size:10px;
+
+    transition:.25s;
+
+}
+
+
+.setting:last-child{
+
+    border-bottom:0;
+
+}
+
+
+/* LABEL */
+
+.setting span{
+
+    color:#bcbcbc;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-shadow:
+
+        0 1px 4px #000;
+
+}
+
+
+/* VALUE */
+
+.setting b{
+
+    color:#ffffff;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    text-align:right;
+
+    text-shadow:
+
+        0 1px 5px #000,
+
+        0 0 8px rgba(255,255,255,.12);
+
+}
+
+
+.setting:hover{
+
+    padding-left:6px;
+
+    padding-right:6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.025),
+            transparent
+        );
+
+}
+
+
+.setting:hover span{
+
+    color:#eeeeee;
+
+}
+
+
+.setting:hover b{
+
+    color:var(--color);
+
+    text-shadow:
+        0 0 10px var(--color);
+
+}
+
+
+/* =====================================================
+   GAME COLORS
+===================================================== */
+
+.valorant{
+
+    --color:#ff174f;
+
+}
+
+
+.cs2{
+
+    --color:#35aaff;
+
+}
+
+
+.pubg{
+
+    --color:#ffb000;
+
+}
+
+
+/* =====================================================
+   HARDWARE
+===================================================== */
+
+.hardware{
+
+    margin-top:40px;
+
+}
+
+
+.hardware-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   HARDWARE CARD
+===================================================== */
+
+.hardware-card{
+
+    --color:#fff;
+
+    position:relative;
+
+    min-height:100px;
+
+    padding:22px 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(22,22,28,.84),
+            rgba(6,6,10,.93)
+        );
+
+    border:1px solid rgba(255,255,255,.14);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+.hardware-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:3px;
+    height:100%;
+
+    background:var(--color);
+
+    box-shadow:
+        0 0 15px var(--color);
+
+}
+
+
+.hardware-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:#ffffff35;
+
+    box-shadow:
+        0 20px 45px #000;
+
+}
+
+
+/* =====================================================
+   HARDWARE ICON
+===================================================== */
+
+.hardware-icon{
+
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+    margin-right:16px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:20px;
+
+    box-shadow:
+        inset 0 0 15px #ffffff08;
+
+}
+
+
+/* =====================================================
+   HARDWARE INFO
+===================================================== */
+
+.hardware-info span{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#b0b0b0;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 1px 4px #000;
+
+}
+
+
+.hardware-info b{
+
+    color:#ffffff;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 1px 5px #000;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    margin-top:45px;
+
+    padding-bottom:10px;
+
+    text-align:center;
+
+    color:#b0b0b0;
+
+    font-size:8px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+        0 1px 5px #000,
+
+        0 0 10px #000;
+
+}
+
+
+.footer span{
+
+    color:var(--red);
+
+    text-shadow:
+        0 0 10px var(--red);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+    .games{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hardware-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    body{
+
+        padding:30px 14px;
+
+        background-attachment:scroll;
+
+    }
+
+
+    .logo{
+
+        width:78px;
+        height:78px;
+
+        border-radius:22px;
+
+    }
+
+
+    .logo img{
+
+        width:82%;
+        height:82%;
+
+    }
+
+
+    .header h1{
+
+        font-size:27px;
+
+        letter-spacing:5px;
+
+    }
+
+
+    .header p{
+
+        font-size:7px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .game-card{
+
+        padding:21px;
+
+    }
+
+
+    .game-icon{
+
+        width:72px;
+        height:72px;
+
+    }
+
+
+    .section-title{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="header">
+
+        <!-- LOGO IMAGE -->
+
+        <div class="logo">
+
+            <img
+                src="./img/Akame.png"
+                alt="EQLZR Logo"
+            >
+
+        </div>
+
+
+        <h1>
+            EQLZR
+        </h1>
+
+
+        <p>
+            Ezqulizer • PRO GAMING SETUP
+        </p>
+
+    </header>
+
+
+
+    <!-- =================================================
+         GAME SETTINGS
+    ================================================== -->
+
+    <div class="section-title">
+        GAME SETTINGS
+    </div>
+
+
+    <div class="games">
+
+
+        <!-- =================================================
+             VALORANT
+        ================================================== -->
+
+        <div class="game-card valorant">
+
+            <div class="game-icon">
+
+                <img
+                    src="./img/Valorant.jpg"
+                    alt="VALORANT"
+                >
+
+            </div>
+
+
+            <h2>
+                VALORANT
+            </h2>
+
+
+            <div class="setting">
+
+                <span>
+                    DPI
+                </span>
+
+                <b>
+                    1600
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    SENSITIVITY
+                </span>
+
+                <b>
+                    0.09 / 0.1 / 0.115
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    DPI
+                </span>
+
+                <b>
+                    800
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    SENSITIVITY
+                </span>
+
+                <b>
+                    0.18 / 0.2 / 0.23
+                </b>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CS2
+        ================================================== -->
+
+        <div class="game-card cs2">
+
+            <div class="game-icon">
+
+                <img
+                    src="./img/CSGO.png"
+                    alt="CS2"
+                >
+
+            </div>
+
+
+            <h2>
+                CS2
+            </h2>
+
+
+            <div class="setting">
+
+                <span>
+                    DPI
+                </span>
+
+                <b>
+                    800
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    SENSITIVITY
+                </span>
+
+                <b>
+                    0.63
+                </b>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PUBG
+        ================================================== -->
+
+        <div class="game-card pubg">
+
+            <div class="game-icon">
+
+                <img
+                    src="./img/PUBG.png"
+                    alt="PUBG"
+                >
+
+            </div>
+
+
+            <h2>
+                PUBG
+            </h2>
+
+
+            <div class="setting">
+
+                <span>
+                    DPI
+                </span>
+
+                <b>
+                    800
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    GENERAL
+                </span>
+
+                <b>
+                    54
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    VERTICAL
+                </span>
+
+                <b>
+                    1.3
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    AIM
+                </span>
+
+                <b>
+                    54
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    ADS
+                </span>
+
+                <b>
+                    46
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    2X / 3X / 4X
+                </span>
+
+                <b>
+                    46 / 46 / 50
+                </b>
+
+            </div>
+
+
+            <div class="setting">
+
+                <span>
+                    6X / 8X / 15X
+                </span>
+
+                <b>
+                    46 / 46 / 46
+                </b>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         HARDWARE
+    ================================================== -->
+
+    <div class="hardware">
+
+
+        <div class="section-title">
+            GAMING HARDWARE
+        </div>
+
+
+        <div class="hardware-grid">
+
+
+            <!-- MOUSE -->
+
+            <div
+                class="hardware-card"
+                style="--color:#ff174f"
+            >
+
+                <div class="hardware-icon">
+                    🖱️
+                </div>
+
+
+                <div class="hardware-info">
+
+                    <span>
+                        MOUSE
+                    </span>
+
+                    <b>
+                        RAZER Viper V3 PRO
+                    </b>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- KEYBOARD -->
+
+            <div
+                class="hardware-card"
+                style="--color:#35aaff"
+            >
+
+                <div class="hardware-icon">
+                    ⌨️
+                </div>
+
+
+                <div class="hardware-info">
+
+                    <span>
+                        KEYBOARD
+                    </span>
+
+                    <b>
+                        MCHOSE ACE 68 HE
+                    </b>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PLAYER -->
+
+            <div
+                class="hardware-card"
+                style="--color:#8b5cf6"
+            >
+
+                <div class="hardware-icon">
+                    ⚡
+                </div>
+
+
+                <div class="hardware-info">
+
+                    <span>
+                        PLAYER
+                    </span>
+
+                    <b>
+                        EQLZR - Ezqulizer - NR2s
+                    </b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        EQLZR - Ezqulizer - NR2s
+
+        <span>
+            •
+        </span>
+
+        2026
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
